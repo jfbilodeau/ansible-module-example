@@ -1,0 +1,12 @@
+---
+- hosts: ios
+  connection: local 
+
+  tasks:
+  - name: Get version
+    ios_version:
+    register: router
+
+  - name: Display version
+    debug:
+      msg: "Running: {{router.version}}"
